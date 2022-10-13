@@ -12,12 +12,10 @@ class HomeBottomNavigationBar extends StatefulWidget {
 
 class _HomeBottomNavigationBarState extends State<HomeBottomNavigationBar> {
   int _selectedIndex = 0;
-
-  static Container optionStyle = Container(
-    width: 50,
-    height: 50,
-    decoration: BoxDecoration(color: Colors.black, shape: BoxShape.circle),
-  );
+  List<Widget> box = [
+    Image.asset("assets/blackcircle.png"),
+    Image.asset("assets/whitecircle.png"),
+  ];
 
   void _onItemTapped(int index) {
     setState(() {
@@ -35,36 +33,77 @@ class _HomeBottomNavigationBarState extends State<HomeBottomNavigationBar> {
               Container(
                 width: 40,
                 height: 40,
-                decoration:
-                    BoxDecoration(color: Colors.black, shape: BoxShape.circle),
+                child: _selectedIndex == 0 ? box[0] : box[1],
               ),
-              Positioned(left: 4, child: Image.asset('assets/Home_light.png'))
+              Positioned(
+                left: 4,
+                child: Center(
+                  child: Image.asset(
+                    'assets/Home_light.png',
+                    color: Color(0xff9B9B9B),
+                  ),
+                ),
+              ),
             ],
           ),
           label: "",
-          backgroundColor: Color(0xffFFFFFF),
+          //backgroundColor: Color(0xffFFFFFF),
         ),
         BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/Favorite.png',
-              color: Colors.black,
-            ),
-            label: "",
-            backgroundColor: Color(0xffFFFFFF)),
+          icon: Stack(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                child: _selectedIndex == 1 ? box[0] : box[1],
+              ),
+              Positioned(
+                top: 3,
+                left: 5,
+                child: Image.asset('assets/Favorite.png'),
+              ),
+            ],
+          ),
+          label: "",
+          //backgroundColor: Color(0xffFFFFFF),
+        ),
         BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/fluent_cart.png',
-              color: Colors.black,
-            ),
-            label: "",
-            backgroundColor: Color(0xffFFFFFF)),
+          icon: Stack(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                child: _selectedIndex == 2 ? box[0] : box[1],
+              ),
+              Positioned(
+                top: 4,
+                left: 2,
+                child: Image.asset('assets/fluent_cart.png'),
+              ),
+            ],
+          ),
+          label: "",
+          //backgroundColor: Color(0xffFFFFFF),
+        ),
         BottomNavigationBarItem(
-            icon: Image.asset(
-              'assets/User.png',
-              color: Colors.black,
-            ),
-            label: "",
-            backgroundColor: Color(0xffFFFFFF)),
+          icon: Stack(
+            children: [
+              Container(
+                width: 40,
+                height: 40,
+                child: _selectedIndex == 3 ? box[0] : box[1],
+              ),
+              Positioned(
+                left: 4,
+                child: Image.asset(
+                  'assets/User.png',
+                ),
+              ),
+            ],
+          ),
+          label: "",
+          //backgroundColor: Color(0xffFFFFFF),
+        ),
       ],
       currentIndex: _selectedIndex,
       onTap: _onItemTapped,
