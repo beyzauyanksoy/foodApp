@@ -10,13 +10,16 @@ class FoodItem extends StatefulWidget {
   final String foodPoint;
   final String mins;
   final String km;
-  const FoodItem(
-      {super.key,
-      required this.imageUrl,
-      required this.foodName,
-      required this.foodPoint,
-      required this.mins,
-      required this.km});
+  final bool status;
+  const FoodItem({
+    super.key,
+    required this.imageUrl,
+    required this.foodName,
+    required this.foodPoint,
+    required this.mins,
+    required this.km,
+    required this.status,
+  });
 
   @override
   State<FoodItem> createState() => _FoodItemState();
@@ -26,7 +29,6 @@ class _FoodItemState extends State<FoodItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-     
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
@@ -55,7 +57,9 @@ class _FoodItemState extends State<FoodItem> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 6.79,),
+            padding: const EdgeInsets.only(
+              top: 6.79,
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -109,7 +113,11 @@ class _FoodItemState extends State<FoodItem> {
               ],
             ),
           ),
-          NewLabel(),
+          widget.status
+              ? NewLabel()
+              : SizedBox(
+                  width: 54.29,
+                )
         ],
       ),
     );
