@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:restaurant_food_app/widgets/newLabel.dart';
 
 class FoodItem extends StatefulWidget {
   final String imageUrl;
@@ -25,7 +26,7 @@ class _FoodItemState extends State<FoodItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(5),
+     
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
@@ -40,6 +41,8 @@ class _FoodItemState extends State<FoodItem> {
       width: 360,
       height: 120,
       child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Container(
             clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -52,7 +55,7 @@ class _FoodItemState extends State<FoodItem> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 6.79, left: 12.6),
+            padding: const EdgeInsets.only(top: 6.79,),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -105,7 +108,8 @@ class _FoodItemState extends State<FoodItem> {
                 )
               ],
             ),
-          )
+          ),
+          NewLabel(),
         ],
       ),
     );
