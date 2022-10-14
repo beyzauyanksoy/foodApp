@@ -14,7 +14,7 @@ class _TextRestaurantState extends State<TextRestaurant> {
   Widget build(BuildContext context) {
     return Padding(
       padding:
-          const EdgeInsets.only(left: 27.15, right: 29.82, top: 30, bottom: 16),
+          const EdgeInsets.only(left: 27.15, right: 29.82, top: 30),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: const [
