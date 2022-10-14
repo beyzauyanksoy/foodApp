@@ -40,8 +40,8 @@ class _FoodItemState extends State<FoodItem> {
               spreadRadius: 0)
         ],
       ),
-      width: 360,
-      height: 120,
+      width: 350,
+      height: 110,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -50,8 +50,8 @@ class _FoodItemState extends State<FoodItem> {
             clipBehavior: Clip.antiAliasWithSaveLayer,
             width: 120,
             decoration: BoxDecoration(
-                color: Colors.amber, borderRadius: BorderRadius.circular(10)),
-            child: Image.network(
+                borderRadius: BorderRadius.circular(10)),
+            child: Image.asset(
               widget.imageUrl,
               fit: BoxFit.cover,
             ),
