@@ -12,6 +12,10 @@ class FoodStartImage extends StatefulWidget {
 class _FoodStartImageState extends State<FoodStartImage> {
   @override
   Widget build(BuildContext context) {
-    return Image.asset("assets/food_start_image.png");
+    return Image.asset(
+      "assets/food_start_image.png",
+      height: 288,
+      fit: BoxFit.cover,
+    );
   }
 }

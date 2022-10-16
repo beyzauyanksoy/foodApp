@@ -16,7 +16,7 @@ class FoodItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 26),
+      padding: const EdgeInsets.only(right: 26, bottom: 16),
       child: Container(
         height: 96.95,
         decoration: BoxDecoration(
@@ -51,18 +51,20 @@ class FoodItem extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          title,
-                          style: TextStyle(
-                            color: Color(0xff010e16),
-                            fontSize: 13.57,
-                            fontFamily: "Inter",
-                            fontWeight: FontWeight.w500,
+                        Expanded(
+                          child: Text(
+                            title,
+                            style: const TextStyle(
+                              color: Color(0xff010e16),
+                              fontSize: 13.57,
+                              fontFamily: "Inter",
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
                         ),
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.star,
                               color: Color(0xffFFD600),
                             ),
